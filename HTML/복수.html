@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"></div>
+    <h1>회원가입</h1>
+    <form action="sigrup"></form>
+    <label for="email">이메일</label>
+    <input type="text" id="email" name="email">
+    <br>
+    <fieldset>
+        <legend>성별정보선택</legend>
+        <label>
+            <input type="radio" name="gender" value="woman">여자
+
+        </label>
+
+    </fieldset>
+    <div class="container">
+        <h1>회원가입폼입니다</h1>
+        <form action="signup.jsp">이메일</form>
+        <input type="text" id="email" name="email">
+        <br>
+        <fieldset>
+            <legend>성별정보선택</legend>
+            <label >
+                <input type="radio" name="gender" value="man" checked>남자
+            </label>
+            <label >
+                <input type="radio" name="gender" value="woman">여자
+            </label>
+        </fieldset>
+    </div>
+    <fieldset>
+        <legend>취미정보선택</legend>
+        <label>
+            <input type="checkbox" name="hobby" value="soccer"> 축구
+        </label>
+        <label>
+            <input type="checkbox" name="hobby" value="baking"> 베이킹
+        </label>
+        <label >
+            <input type="checkbox" name="hobby" value="piano"> 피아노
+        </label>
+        <label>
+            <input type="checkbox" name="hobby" value="etc"> 기타
+        </label>
+    </fieldset>
+    <label for="jod"></label>
+    <select name="programmer" id="job">
+    <option value="programmer"></option>
+    <option value="doctor"></option>
+    <option value="pianist"></option>
+    <option value="etc"></option>
+    <button type="submit"></button>
+    </select>
+    <br>
+    <label for="lunch">점심선택</label>
+    <select name="lunch" id="lunch">
+        <optgroup label="한식">
+            <option>ㅇㅇ</option>
+            <option>ㅇㅇ</option>
+            <option>ㅇㅇ</option>
+        </optgroup>
+        <optgroup>
+            <option>ㅇㅇ</option>
+            <option>ㅇㅇ</option>
+            <option>ㅇㅇ</option>
+        </optgroup>
+    </select>
+    <br>
+    <label for="myfile">첨부파일</label>
+    <input type="file" name="myfile" id="myfile">
+    <br>
+    <label for="comment">하고싶은말</label>
+    <br>
+    <textarea name="comment" id="comment" ></textarea>
+    <br>
+    <p>
+    <h1>웹브라우저의 종류의 비번별로 지원이 될수도 있고 안될수도있다</h1>
+    <a href="http//caniuse.com">여기서 확인</a>
+    </p>
+    
+        <form action="inert.jsp">
+            색상선택<input type="color" name="color">
+            <br>
+            범위선택<input type="range" name="range" min="0" max="100" step="10" value="30">
+            <br>
+            날짜선택<input type="date" name="date">
+            <br>
+            시간선택<input type="time" name="time">
+            <br>
+            날짜 시간 선택<input type="datetime" name="datetime">
+            <br>
+            숫자선택 <input type="number" name="number" min="0" max="10" step="0">
+            <br>
+            이메일<input type="email" name="email">
+            <br>
+  
+    <button type="submit"></button>
+    <div class="container">
+        </form>
+        <h1>폼 요소에 기본값 설정하기</h1>
+        <p>
+            서버에서 클라이언트에게 폼을 응답할떄 이미 저장된 값을 출력한 채로 응답을
+            해야할떄가 있다 예를 들어 회원가입된 정보 보기로 이동한다면 db에 이미 저장된 내용을 출력해 주어야한다
+
+        </p>
+        <form action="update.jsp"></form>
+        이메일<input type="email" name="email" value="aaa@naver.com">
+        <br>
+        <fieldset>
+            <legend>취미정보선택</legend>
+            <label>
+                <input type="checkbox" name="hobby" value="soccer">축구
+            </label>
+            <label >
+                <input type="checkbox" name="hobby" value="baking"> 베이킹
+            </label>
+            <label >
+                <input type="checkbox" name="hobby" value="piano"> 피아노
+            </label>
+        
+            <label >
+                <input type="checkbox" name="hobby" value="etc"> 기타
+            </label>
+        </fieldset>
+            <label for="job">직업</label>
+            <select name="job" id="job">
+                <option value="">선택</option>
+                <option value="programmer">프로그래머</option>
+                <option value="doctor">의사</option>
+                <option value="pianist">피아니스트</option>
+                <option value="etc">기타</option>
+            </select>
+            <br>
+            dasdasd
+            <br>
+            <!-- textarea의 초기값은 textarea 의 innertext로 출력을 해놓아야 한다 -->
+            <textarea name="comment"  rows="10">
+                김구라
+                핼골
+                이준규
+            </textarea>
+            </div>
+            <br>
+            <button type="submit">수정</button>
+            <button type="reset" >취소</button>
+            
+       
+</body>
+</html>

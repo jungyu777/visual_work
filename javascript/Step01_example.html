@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_example.html</title>
+</head>
+<body>
+    <h1>배열의 활용</h1>
+    <!-- 여러개의 데이터를 하나의 묶음으로 활용하고싶을떄
+        배열 또한 오브젝트의 일종 순서가중요한데이터는 array로관리 
+        nums[0]=999 대입 연산의 좌측에서 참조가 되면 값이 수정된다.
+        nums.length   nums.forEach((item)=>{console.log(item)};
+    nums.push(60) 아이템을 뒤에서 추가하고싶을떄 
+    10,20,30,40,50,60
+    
+    nums.splice(0,1) 새로운 배열로 리턴
+     nums.splice(잘라내기를 시작할 index , 잘라낼갯수 ) 
+     nums.splice(0,2); 이러면 10 하고 20이 짤려나감
+    나중에 필요해지면 변수에 담으면됨 ley a =nums.splice(0,2);
+    nums.splice(2,1) 2번쨰 인덱스로부터 1개삭제
+    nums.splice(0,1) 0번쨰 인덱스로부터 1개삭제-->
+    <script>
+        let nums=[10,20,30,40,50,];
+        nums.push(60);
+        nums.slice(0,1);
+        
+        let a = nums.length;//벼열의 방의 크기 참조
+        
+    </script>
+</body>
+</html>

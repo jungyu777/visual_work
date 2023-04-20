@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_Example.html</title>
+</head>
+<body>
+    <h1>if~else 문 테스트</h1>
+    <p>번지 점프는 몸무게가 100kg이 넘으면 탈수가 없습니다.</p>
+    <input type="text" id="weight" placeholder="몸무게입력..">
+    <button onclick="check()">확인</button>
+    <p id="result"></p>
+    <script>
+// 위의 인풋 요소에 몸무게를 입력하고 확인 버튼을 눌렀을떄 입력한 몸무게가 100이상이면 id가 result 인 요소에 "이용불가 입니다"를 출력하고
+// 100kg 이상이 아니면 "이용가능합니다" 를 출력하도록 프로그래밍 한다. input의 입력값은 .value
+      // let w = document.querySelector("#weight").value  
+       
+        check=()=>{
+            //입력한 몸무게를 읽어온다.
+            let w = document.querySelector("#weight").value;
+            //만일 100이상이면"이용불가" 100 이하이면"이용가능"
+            if(w >= 100){
+                    document.querySelector("#result").innerText="이용불가";
+            }else{
+                    document.querySelector("#result").innerText="이용가능";
+            } 
+         };
+         
+    </script>
+</body>
+</html>

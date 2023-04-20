@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step06_DataType10.html</title>
+</head>
+<body>
+    <h1>script 데이터 </h1> 
+    <p><strong>function 의 매개 변수</strong></p>
+    <!-- parameter 함수를 콜하면서 어떤 데이터를 전달해줘야할떄
+        동작에 필요한 값을 전달해야할떄 -->
+        
+    <script>
+        // function(msg){
+
+        //}
+        //에서 msg 는 매개 변수이다. 함수에 전달되는 값을 전달 받을 변수이며
+        //let 을 선언하지 않는다. 매개변수는 해당 함수 안에서만 사용할수 있다.
+
+        let printMsg=function(msg,vsg,ttt,vvvv,bbb,ddd,qqq){
+            //msg에 뭐가 전달될지는 모르지만 아래와 같이 사용할꺼야
+            console.log("--------------");
+            console.log(msg);
+            console.log(vsg);
+            console.log(ttt);
+            console.log(vvvv);
+            console.log(bbb);
+            console.log(ddd);
+            console.log(qqq);
+            console.log("-----------");
+            return printMsg;
+        };
+     // ()<-매개 변수를 선언할수 있는 공간 이 함수 안에서만 쓸수 있는데 msg 변수를 하나 선언한것과 마찬가지
+            //msg 를 콜하는 시점에 값이 결정된다
+
+            printMsg("hello","bye","이","준","규","천","재");//이값이  위에 msg에 자동으로 전달됨
+    </script>
+</body>
+</html>

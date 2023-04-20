@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            /* 가로로배치 */
+            display: flex; 
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>원하는 박스를 클릭해보세요</h1>
+    <!-- 1.div에 addEventListener 각각 다 작용해야됌 
+         2.  addEventListenerALL은 배열이기떄문에 addEventListenerALL을하면안됌
+        3.  하나하나씩 다 참조해야함 
+        4.-->
+    <div class="wrapper">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+        <div class="box">box9</div>
+        <div class="box">box10</div>
+
+    </div>
+    <script>
+       
+        // 클릭된 box div 의 배경색을 노란색으로 변경되도록 프로그래밍 해보세요.
+        // document.querySelectorAll(".box")[0].addEventListener("click",(e)=>{
+        //     e.target.style.backgroundColor="yellow";
+        // });
+        // document.querySelectorAll(".box")[1].addEventListener("click",()=>{});
+        // document.querySelectorAll(".box")[2].addEventListener("click",()=>{});
+        // document.querySelectorAll(".box")[3].addEventListener("click",()=>{});
+        // document.querySelectorAll(".box")[4].addEventListener("click",()=>{});
+        // document.querySelectorAll(".box")[5].addEventListener("click",()=>{});
+        // document.querySelectorAll(".box")[6].addEventListener("click",()=>{});
+        // document.querySelectorAll(".box")[7].addEventListener("click",()=>{});
+        // document.querySelectorAll(".box")[8].addEventListener("click",()=>{});
+        // document.querySelectorAll(".box")[9].addEventListener("click",()=>{});
+          
+        // for(let i=0; i<10; i++){
+        //     document.querySelectorAll(".box")[i].addEventListener("click",(e)=>{
+        //     e.target.style.backgroundColor="yellow";
+        // });
+        // }
+
+        // for each 해보기
+        //.box div 의 참조값을 배열에 모두 담아오기
+        let divs=document.querySelectorAll(".box");
+        //이 배열에 아이템의 갯수만큼 즉시
+        divs.forEach((item)=>{
+            //item은 div 으; 참조값이고 event listener 함수를 등록해야한다.
+            item.addEventListener("click",(e)=>{
+                e.target.style.backgroundColor="yellow";
+            });
+        });
+        
+    </script>
+    
+</body>
+</html>
