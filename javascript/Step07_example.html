@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 768px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <h1>친구목록입니다</h1>
+    <button id="printBtn">출력하기</button>
+    <ul id="friendList">
+      
+    </ul>
+    <script> //페이지로당시점에 배열이 만들어지고 네임즈에 담긴다 
+    // id가 클릭 이벤트 함수안에 콜백함수가 등록이되었다
+        let names = ["김구라","해골","원숭이","주뎅이","덩어리"]
+      
+       //document.querySelector("#printBtn").addEventListener("click",()=>{클릭시점에나오기
+        // for(let i=0;i<names.length ;i++){ //페이지 로딩시점에 나오기
+        //     let li=document.createElement("li"); //li 요소 만들기
+        //     li.innerText=names[i]; //li요소에있는 innertext 를 배열 names[i]값넣기
+        //     document.querySelector("#friendList").append(li); //ul에 li요소 집어넣기
+        // }
+
+       //})
+      document.querySelector("#printBtn").addEventListener("click",()=>{
+        for(let i =0;i<names.length;i++){
+            let li =document.createElement("li");
+            li.innerText=names.length;
+            document.querySelector("#friendList").append(li);
+        }
+      })
+    </script>
+    <!-- Document 객체
+Document 객체는 웹 페이지 그 자체를 의미합니다.
+
+웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시 Document 객체부터 시작해야 합니다.
+Document.querySelector() 는 제공한 선택자 또는 선택자 뭉치와 일치하는 
+문서 내 첫 번째 Element를 반환합니다. 일치하는 요소가 없으면 null을 반환합니다.
+참고: 이 방법은 이벤트 리스너를 등록하는 데 권장되는addEventListener() 방법 입니다 . 이점은 다음과 같습니다.
+
+이벤트에 대해 둘 이상의 핸들러를 추가할 수 있습니다. 이는 라이브러리, JavaScript 모듈 또는 다른 라이브러리나 확장과 잘 작동해야 하는 기타 종류의 코드에 특히 유용합니다.
+속성을 사용하는 것과 달리 onXYZ리스너가 활성화될 때(캡처 대 버블링) 단계를 보다 세밀하게 제어할 수 있습니다.
+HTML 또는 SVG 요소뿐만 아니라 모든 이벤트 대상에서 작동합니다. 
+createElement: 요소를 만들어서 html 에추가해준다
+.append() 메소드는 선택된 요소의 마지막에 새로운 HTML 요소나 콘텐츠를 추가한다.-->
+</body>
+</html>
