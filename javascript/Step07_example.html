@@ -23,21 +23,14 @@
     // id가 클릭 이벤트 함수안에 콜백함수가 등록이되었다
         let names = ["김구라","해골","원숭이","주뎅이","덩어리"]
       
-       //document.querySelector("#printBtn").addEventListener("click",()=>{클릭시점에나오기
-        // for(let i=0;i<names.length ;i++){ //페이지 로딩시점에 나오기
-        //     let li=document.createElement("li"); //li 요소 만들기
-        //     li.innerText=names[i]; //li요소에있는 innertext 를 배열 names[i]값넣기
-        //     document.querySelector("#friendList").append(li); //ul에 li요소 집어넣기
-        // }
-
-       //})
-      document.querySelector("#printBtn").addEventListener("click",()=>{
-        for(let i =0;i<names.length;i++){
-            let li =document.createElement("li");
-            li.innerText=names.length;
+       document.querySelector("#printBtn").addEventListener("click",()=>{
+        for(let i = 0; i < names.length; i++ ){
+            document.querySelector("li")
+            let li = document.createElement("li");
+            li.innerText=names[i];
             document.querySelector("#friendList").append(li);
         }
-      })
+       })
     </script>
     <!-- Document 객체
 Document 객체는 웹 페이지 그 자체를 의미합니다.
@@ -51,6 +44,14 @@ Document.querySelector() 는 제공한 선택자 또는 선택자 뭉치와 일�
 속성을 사용하는 것과 달리 onXYZ리스너가 활성화될 때(캡처 대 버블링) 단계를 보다 세밀하게 제어할 수 있습니다.
 HTML 또는 SVG 요소뿐만 아니라 모든 이벤트 대상에서 작동합니다. 
 createElement: 요소를 만들어서 html 에추가해준다
-.append() 메소드는 선택된 요소의 마지막에 새로운 HTML 요소나 콘텐츠를 추가한다.-->
+.append() 메소드는 선택된 요소의 마지막에 새로운 HTML 요소나 콘텐츠를 추가한다.
+
+
+javascript 에서는 함수만 단독으로 존재할수도있다, 함수자체도 값이다
+변수에 담을수있는 이유는 heap 영역에 단독으로 존재할수있어야한다
+
+
+let f = function(){}  //   javascript 에서만가능
+-->
 </body>
 </html>
