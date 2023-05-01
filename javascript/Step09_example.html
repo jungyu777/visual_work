@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example</title>
+</head>
+<body>
+    <h1>setInterval,setTimeout 함수 사용해보기</h1>
+        <p>
+            <strong id="min">0</strong>분
+            <strong id="sec">0</strong>초
+        </p>
+    <script>
+        //setInterval 밖에다 설정해야 값이 계속 유지면서 초기화가 안된다
+        //아래의  setinterval 함수를 이용해서 위의 시간이 진행되도록 해보세요
+        //setInterval 함수안에서 사용할 변수를 만들고 0으로 초기화 하기
+        let sec=0;
+        let min=0;
+        setInterval(()=>{
+                //초를 1씩 증가 시킨다
+                sec++// sec = sec+1 or sec += 1
+                //만일 증가 시킨 초가 60이면 분을 1씩 증가시킨다.
+                if(sec == 60){
+                    min++;
+                    sec=0;//초를 0으로 초기화
+                }
+                //초와 분을 위으 strong 요소의 innerText 로 각각 출력한다.
+                document.querySelector("#min").innerText=min;
+                document.querySelector("#sec").innerText=sec;
+            
+        },1000)
+
+
+        //setInterval,setTimeout 함수는 javascript buliltin 함수이다
+        //페이지 로딩이후에 1초 있다가 호출된다.
+        setTimeout(()=>{
+            console.log("setTimeout 에 전달한 함수가 호풀되네?");
+        },1000);//1000 딜레이 시간 1초
+
+        //1초마다 계속 호출된다,
+        setInterval(()=>{
+            console.log("setInterval 에 전달한 함수가 호출된다")
+        },1000)
+    </script>
+</body>
+</html>
