@@ -13,9 +13,14 @@
 </head>
 <body>
     <h1>canvas 요소 활용해 보기</h1>
+    <p> 잡은 토끼의 갯수 : <strong id="point" >0</strong></p>
     <!-- canvas 요소는 width 와 height 를 속성으로 직접 지정할수 있다. -->
+    <!--  -->
     <canvas id="myCanvas" width="800" height="500"></canvas>
     <script> 
+        //잡은 토끼의 갯수를 저장할 변수 선언하고 초기값 0대입
+        let point=0;
+
 
         //canvas 요소의 참조값 
         const canvas=document.querySelector("#myCanvas");
@@ -67,6 +72,11 @@
 
         //풍선의 정보를 저장할 배열
         const bubbles=[];
+
+        //글자의 크기,글꼴
+        context.font="20px consolas";
+        //글자의 색상
+        context.fillstyle="yellow";
         
         setInterval(()=>{
             //함수가 호출될때 마다 count 를 1 씩 증가 시킨다 
@@ -100,24 +110,28 @@
                 tmp.x += tmp.speedX;
                 tmp.y += tmp.speedY;
                 //위에서 움직인 직후 풍선이 화면을 벗어 났는지 판별해서
-                let isOut = tmp.x<-25 || tmp.x>825 || tmp.y<-25 || tmp.y>525;
+                //context.drawImage(backImg, 0, 0, 800, 500);
+                let isOut = tmp.x < -25 || tmp.x >825 ||tmp.y < -25 ||tmp.y > 525
                 //만일 벗어 났다면
                 if(isOut){
                     tmp.isOut=true;
                 }
             }
-            //풍선 체크하기 (화면을 벗어난 풍선은 제거하기)
-            for(let i=0; i<bubbles.length; i++){
+            //풍선 체크하기 (화면을 벗어난 풍선을 제거하기)
+            for(let i =0; i <bubbles.length;i++){
                 let tmp=bubbles[i];
-                //만일 i 번째 풍선이 화면을 벗어 났다면 
+                //만일 i번쨰 풍선이 화면을 벗어 났다면
                 if(tmp.isOut){
-                    //bubbles 배열에서 i 번째 방에서 부터 1개 잘라내기(삭제하기)
-                    bubbles.splice(i, 1);
+                    //bubbles 배열에서 i번쨰 방을 잘라내기 (삭제하기)
+                    bubbles.splice(i,1); //i번쨰 인덱스로부터 1개 삭제
                 }
             }
 
             //스나이프 그리기
             context.drawImage(snipeImg, snipeX-50, snipeY-50, 100, 100);
+            //글자 출력하기 : fillText(글내용, 좌하단의 x, 좌하단의 y)
+            context.fillText("point  :" + point ,10,30);
+            
 
             if(count%20 == 0){
                 //토끼 이미지 인덱스 1 증가 시키기
@@ -145,6 +159,7 @@
         });
 
         canvas.addEventListener("mousedown", (e)=>{
+            
             //mousedown 이벤트가 발생한 곳의 좌표를 변수에 담아놓고 아래에서 2번 활용하기 
             let x=e.offsetX;
             let y=e.offsetY;
@@ -176,12 +191,27 @@
                     tmp.x=rabbitX;
                     tmp.y=rabbitY;
                     tmp.index=i;
-                    tmp.speedX=Math.random()*10-5;
-                    tmp.speedY=Math.random()*10-5;
-                    tmp.isOut=false; //화면을 벗어 났는지여부
+                    //풍선 속도 줄이고 싶으면 *10-5;
+                    tmp.speedX=Math.random()*20-10;
+                    tmp.speedY=Math.random()*20-10;
+                    //화면을 벗어 났는지 여부
+                    tmp.isOut=false;
                     //배열에 누적 시키기
                     bubbles.push(tmp);
+                    //x < -25 화면 왼쪽으로 벗어난거
+                    //x > 825 화면 위쪽   벗어남
+                    //y < -25 화면 오른쪽 벗어남
+                    //y > 525 화면 아래쪽으로 벗어남
+                    //화면을 벗어나면 배열에서 제외시키기
                 }
+
+                    //총에 맞았으니 토끼를 랜덤한 위치로 움직이게 하기
+                    rabbitX = Math.random()*700 + 50;
+                    rabbitY = Math.random()*400 + 50;  
+                    //토끼잡은 갯수 증가시키기
+                    point++;
+                    //strong 요소의 innerText 로출력하기
+                    document.querySelector("#point").innerText=point;
             }
 
         });
