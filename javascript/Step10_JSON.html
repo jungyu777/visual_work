@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_JSON.html</title>
+</head>
+<body>
+    <h1>json 문자열 사용해 보기</h1>
+    <p>
+        <Strong>java Script onject Notation</Strong>(자바스크립트 객체 표기법)
+        을 따르는 문자열을 json 문자열이라고 한다.
+    </p>
+    <script>
+        /*
+        json 형식으로학생 한명의 정보를 나타낸다면
+
+        {"name":"김민규","addr":"신림동"}
+        -key값은 반드시 double quotation("") 으로 감싸야 한다.
+        -value 로 작성할수 있는 형식
+        1. 문자열 "xxx"
+        2. 숫자 10
+        3. 논리 true or false
+        4. 빈값 null
+        5. 또하나의 json{}
+        6. 또하나의 json[]
+        {      "key" : value 
+                json은 function 사용불가
+            "num":1,
+            "name":"김구라",
+            "isMan":true,
+            "addr":null,
+            "friends": ["해골","원숭이","주뎅이"],
+            "company: {
+                "name":"에이콘",
+                "addr":"강남역"
+                }
+            }
+            JSON형식의 문자열
+        */
+        const data=`
+            {  
+                "num":1,
+                "name":"김구라",
+                "isMan":true,
+                "addr":null,
+                "friends": ["해골","원숭이","주뎅이"],
+                "company": {
+                        "name":"에이콘",
+                        "addr":"강남역"
+                    }
+            }
+        `;
+        //JSON 형식의 문자열을 이용해서 onject 만들기
+        const result =  JSON.parse(data);
+        
+        //object 를 이용해서 JSON 형식의 다시 문자열로 만들기
+        const result2 = JSON.stringify(result);
+
+        //JSON이란 자바스크립트 기본객체(빌트인 오브젝트)중요 JSON.parse() JSON.stringify()
+        //담배좀 줄이자 하루에 5개 
+
+
+    </script>
+    
+</body>
+</html>

@@ -27,9 +27,11 @@
 
         //canvas 에 그릴 이미지 로딩하기
         const snipeImg=new Image();
-        snipepeImg.src="images/snipe.png";
+        snipeImg.src="images/snipe.png";
+
         const holeImg=new Image();
         holeImg.src="images/hole.png";
+
         const backImg=new Image();
         backImg.src="images/background.jpg";
 
@@ -39,6 +41,8 @@
         rabbitImg1.src="images/rabbit_1.png";
         const rabbitImg2=new Image();
         rabbitImg2.src="images/rabbit2.png";
+
+        const rabbitImgs=[rabbitImg1,rabbitImg2];
 
         //snipe 의 좌표
         let snipeX=0; snipeY=0;
@@ -74,10 +78,11 @@
         context.fillStyle="yellow";
 
         //시계 다이얼 이미지
-        const dialImg=new Imasge();
+        const dialImg=new Image();
+        dialImg.src="images/dial.png"
         //초침 이미지
         const secImg=new Image();
-        dialImg.sec="images/dial.png"
+        secImg.sec="images/clock_sec.png"
         //시계를 그릴 좌표
         const clockx=700;
         const clockY=100;
