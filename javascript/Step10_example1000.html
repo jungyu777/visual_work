@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="showBtn" >추가</button>
+    <button id="addBtn2">추가</button>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+       const data=`[
+                    {"num":1,"name":"김구라","addr":"노량진"},
+                   {"num":2,"name":"해골","addr":"행신동"},
+                   {"num":3,"name":"원숭이","addr":"상도동"}
+    ]`;
+
+    document.querySelector("#showBtn").addEventListener("click",()=>{
+        const arr = JSON.parse(data);
+
+        for(let i=0;i<arr.length;i++){
+            let tmp = arr[i];
+            let tr=`
+                <tr>
+                    <td>${tmp.num}</td>    
+                    <td>${tmp.name}</td>   
+                    <td>${tmp.addr}</td>   
+                </tr>
+            
+            
+            `;
+            document.querySelector("tbody").insertAdjacentHTML("beforeend",tr)
+        }
+    });
+    </script>
+
+    
+</body>
+</html>

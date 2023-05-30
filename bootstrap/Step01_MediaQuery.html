@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css는 선택자의 구체성이 같다면 나중에 선언한게 적용됌 
+    
+            반응형 페이지 만드는 3가지요견
+        
+            미디어 쿼리
+            %요건
+            뷰포트설정-->
+
+    <style>
+
+        @media(min-width: 576px){
+            .bg-yellow{
+            background-color: yellow;
+            }
+        }
+        
+
+        /* 아래의 media query의 중괄호 안에 작성한 css 는 조건부로 적용된다
+            ()안의 조건이 true 인경우에만 적용된다.
+            따라서 device 의 폭이 최소 768px이상이 되어야 적용된다.
+        */
+        @media(min-width: 768px){
+            .bg-green{
+            background-color: green;
+            }
+        }
+
+        /* rem은 html 최상위 요소의 글자 크기를 의미 따로 수정하지 않는 이상 16px
+        
+            padding margun width geight등등 어떤 크기를 설정할떄
+            16px대신에 1rem이렇게 설정할수있다
+            32px 대신에 2rem  1.5은 은 24px 이다.*/
+            
+        /* me-auto => 오른쪽 마진을 자동으로 auto 마진을 가질수 있는 공간이 있다면 모두 */
+    </style>
+</head>
+<body>  
+   
+    <p class="bg-yellow bg-green"> p1 입니다.</p>
+  
+   
+</body>
+</html>
