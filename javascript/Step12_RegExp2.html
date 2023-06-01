@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_RegExp2.html</title>
+</head>
+<body>
+    <h1>입력한 문자열 검증하기</h1>
+    <p>반드시 입력해야하고 특수문자는 허용하지 않습니다.</p>
+    <input type="text" id="one" placeholder="입력....">
+    <p id="result"></p>
+    <script>
+        //2.반드시 입력(한글자 이상)해야 하고 특수문자는 허용하지 않습니다 조건을 만족하면
+        //id가 result인 p요소의 innerText로 "pass" 를 출력하고
+        //만족하지 않으면 "Fail" 을 출력해 보세요
+        document.querySelector("#one").addEventListener("input",(e)=>{
+            //1.입력한 문자열을 읽어와서 
+            const msg = e.target.value;
+            //검증할 정규표현식 객체를 만들어서
+            // const reg = /^[a-zA-z0-9].+$/;
+            const reg =/^[\w]+$/;
+            //매칭여부를 알아낸다
+            const ispass=reg.test(msg);
+            if(ispass){
+                document.querySelector("#result").innerText="pass";
+            }else{
+                document.querySelector("#result").innerText="Fill";
+            }
+            
+            
+        });
+
+    </script>
+    
+</body>
+</html>

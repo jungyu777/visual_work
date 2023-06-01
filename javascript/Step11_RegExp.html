@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step11_RegExp.html</title>
+</head>
+<body>
+    <h1>정규표현식 객체 생성하기</h1>
+    <script>    
+        //정규표현식으로 검증할 문자열
+        const str="abcabcabc";
+
+        //1.생성하는 방법
+        const reg1= /a/; //슬레시안에 작성한 문자열이 정규표현식이다. a라는 문자열을 찾는것
+
+        //생성하는 방법 2
+        const reg2= new RegExp("a");//다음표안에 작성한 문자열이 정규표현식이다.
+
+        /* .은 아무거나 한글자
+        souree 가 검증할 문자열
+        1.정규표현식은 대소문자를 가린다
+        2.space ,tab, new line 기호도 정확히 일치해야한다
+        3.
+
+
+        . => 아무거나 한글자
+        []=>안에 명시한 한글자
+        [abc] => abc중에 한글자
+        [a-z] => a에서 부터 z범위 내에서 한글자
+        [가--] => 한글 한글자
+        [0-9] =>숫자하나
+        ---자주사용함----
+        [a-zA-z0-9]=> 특수문자가 아닌 한글자
+        [^A-D] [] 안에 ^ 은 NOT을 의미한다 : A-D 가 아닌 한글자를 찾아준다
+
+
+        (  |  ) : 문자열을 교차매칭시키려면 소괄호안에 |
+        (Mon|Tues|Fri)day : Monday , tuesday Friday
+        0번또는 1번 : 문자열의  
+
+        소문자와 대문자는 반대개념이다
+        [^\w] : 대문자 [^\W] : 소문자 
+
+        특별한 의미를 갖고있는 문자 ^ $ \ * + ? .
+        시작/ 끝 /역슬 /0번이상 /1번이상 /0번-1번 /아무거나
+        (소괄호는 문자열을 교차매칭)
+        /[a-z].{4}/ => 첫글자는 영문자 소문자, 총 5글자를 찾는다. 
+        a부터 z까지 한글자 아무거나 한글자 4번반복 총 5글자
+
+        let str1 = "a1234";
+        let str2 = "ABCD b5678 EFGH";
+
+
+        /^[a-z].{4}$/ => 
+        시작과 끝을 명시가
+
+
+        */
+       
+
+    </script>
+</body>
+</html>
