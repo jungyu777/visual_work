@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step_06PopOver.html</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+</head>
+<body>
+    <div class="container" style="padding: 200px;">
+        <h1>Popover테스트</h1>
+        <button id="one" type="button" class="btn btn-lg btn-danger" 
+            data-bs-toggle="popover" 
+            data-bs-title="Popover title" 
+            data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover
+        </button>
+        <button id="two" type="button" class="btn btn-lg btn-danger" 
+            data-bs-toggle="popover" 
+            data-bs-title="Popover title" 
+            data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover
+        </button>
+        
+        <button id="three" type="button" class="btn btn-lg btn-danger" 
+            data-bs-toggle="popover" 
+            data-bs-title="Popover title" 
+            data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover
+        </button>
+    
+        
+    </div>
+    <script>
+        //첫번쨰 버튼의 popover 초기화 하기
+    //    const one=document.querySelector("#one");
+    //    new bootstrap.Popover(one,{placement:"top"});
+    //    const two=document.querySelector("#two");
+    //    new bootstrap.Popover(two,{placement:"bottom"});
+       
+    //    new bootstrap.Popover(document.querySelector("#three"),{
+    //         placement:"right",
+    //         trigger:"hover focus",
+            
+    //    });
+
+
+       //한번에 일괄적으로 초기화 하기
+       //buttons는 배열이긴 하지만 map()함수가 없다
+       const buttons= document.querySelectorAll("[data-bs-toggle=popover]");
+       //buttons 배열안에 있는 아이템을 펼쳐서 새로운 배열을 만들어서 map()함수 사용하기
+        [...buttons].map(item=> new bootstrap.Popover(item));
+
+
+
+       //새로운 배열이 리턴된다/ 여기서 리턴되는 벨류로 새로운 배열이 만들어진다
+       const nums= [1,2,3,4,5].map(item=>item*10);//10,20,30,40,50
+       const nums2= [1,2,3,4,5].map(item=>item%3);//3으로 나눈값
+       const result= ["김구라","해골","원숭이"].map(item=>item+"님");//김구라님,해골님, 원숭ㄹ이 님
+       console.log(nums);
+       console.log(nums2);
+       console.log(result);
+    </script>
+</body>
+</html>
