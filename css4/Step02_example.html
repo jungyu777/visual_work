@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Step02_example.html</title>
     <style>
         .container{
             width: 80%;
@@ -15,7 +15,6 @@
             border: 1px solid red;
             overflow: hidden;
         }
-       
         #one{
             width: 300px;
             height: 300px;
@@ -26,27 +25,24 @@
     </style>
 </head>
 <body>
-    
     <div class="container">
         <h3>transform 예제</h3>
         <button id="showBtn">보이기</button>
         <button id="hideBtn">숨기기</button>
         <div class="wrapper">
             <div id="one">one</div>
-
         </div>
-
     </div>
     <script>
-        document.querySelector("#showBtn").addEventListener("click",()=>{
-            //id가 one인 요소에 transform: translateX(0px) 를 적용하기
+        document.querySelector("#showBtn").addEventListener("click", ()=>{
+            // id 가 one 인 요소에  transform: translateX(0px)  를 적용하기 
             document.querySelector("#one").style.transform="translateX(0px)";
         });
-        document.querySelector("#hideBtn").addEventListener("click",()=>{
-            //id가 one인 요소에 transform: translateX(-300px) 를 적용하기
+
+        document.querySelector("#hideBtn").addEventListener("click", ()=>{
+            // id 가 one 인 요소에  transform: translateX(-300px)  를 적용하기 
             document.querySelector("#one").style.transform="translateX(-300px)";
         });
-
     </script>
 </body>
 </html>

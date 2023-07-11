@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Step02_Transform.html</title>
     <style>
         .box{
             width: 100px;
@@ -11,23 +11,18 @@
             border: 1px solid red;
             cursor: pointer;
             background-color: yellow;
-            transition: 0.4s ease-out;
+            transition: transform 0.4s ease-out;
         }
         .box:hover{
-            /*평행이동 , 확대, 축소, 회전, 비틀기  등을 수행할수 있는 transform 속성*/
+            /* 평행이동, 확대, 축소, 회전, 비틀기 등을 수행할수 있는 transform 속성*/
             transform: translateX(50px) translateY(50px) rotate(45deg) scale(1.5);
-            /*                                             각도           1.5배커짐*/
         }
-
     </style>
 </head>
 <body>
     <div class="container">
         <h1>transform 테스트</h1>
-        <div class="box">
-
-
-        </div>
+        <div class="box"></div>
     </div>
 </body>
 </html>

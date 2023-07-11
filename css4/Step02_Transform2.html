@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Step02_Transform2.html</title>
     <style>
         .box{
             width: 100px;
@@ -11,7 +11,7 @@
             border: 1px solid red;
             cursor: pointer;
             background-color: yellow;
-            transition: 0.4s ease-out;
+            transition: transform 0.4s ease-out;
         }
         .move{
             transform: translateX(50px) translateY(50px) rotate(45deg) scale(1.5);
@@ -21,20 +21,16 @@
 <body>
     <div class="container">
         <h1>transform 테스트</h1>
-        <div class="box">
-
-
-        </div>
+        <div class="box"></div>
     </div>
     <script>
-        // .box div 를  클릭했을떄 
+        //.box div 를 클릭했을때 
         // transform: translateX(50px) translateY(50px) rotate(45deg) scale(1.5);
-        //위의 css가 적용되도록 해보세요.
-        //hint => class 를 활용
-        document.querySelector(".box").addEventListener("click",(e)=>{
+        // 위의 css가 적용되도록 해 보세요.
+        // hint => class 선택자를 할용 
+        document.querySelector(".box").addEventListener("click", (e)=>{
             e.target.classList.add("move");
         });
-
     </script>
 </body>
 </html>
